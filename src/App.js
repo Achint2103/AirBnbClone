@@ -1,11 +1,28 @@
-import Header from './header';
+import React from "react";
+import Navbar from "./navbar";
+import Hero from "./hero";
+import Card from "./card";
+import data from "./data";
 
-function App() {
+export default function App() {
+  const cards = data.map(item =>{
+    return(
+      <Card
+    key = {item.id}
+    item = {item}
+    />
+
+    )
+  })
   return (
     <div>
-     <Header />
+    <Navbar />
+    <Hero />
+    <section className="cards-list">
+                {cards}
+            </section>
     </div>
+
   );
 }
 
-export default App;
